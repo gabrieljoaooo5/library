@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Delete Book
+{% endblock title %}
+
+{% block titlePage %}
+Delete Book
+{% endblock titlePage %}
+
+{% block content %}
+<form method="post">{% csrf_token %}
+    <h4>Are you sure you want to delete the book "{{ book.Title }}"?</h4>
+    <br/>
+<button type="submit" class="btn btn-primary">
+    Delete
+</button>
+</form>
+
+{% endblock content %}

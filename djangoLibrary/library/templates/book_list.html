@@ -29,6 +29,9 @@ BookList
         <a href="{% url 'book_edit' pk=book.pk %}">
           <span class="glyphicon glyphicon-pencil"></span>
         </a>
+        <a href="{% url 'book_delete' pk=book.pk %}">
+          <span class="glyphicon glyphicon-trash"></span>
+        </a>
       </td>
     </tr>
   {% endfor %}

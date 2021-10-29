@@ -32,3 +32,10 @@ def book_edit(request, pk, template_name='book_form.html'):
     else:
         form = BookForm(instance=book)
     return render(request, template_name, {'form': form})
+
+def book_delete(request, pk):
+    book = Book.objects.get(pk=pk)
+    if request.method == "POST":
+        book.delete()
+        return redirect('book_list')
+    return render(request, 'book_delete.html', {'book': Book})
