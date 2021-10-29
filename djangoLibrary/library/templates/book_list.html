@@ -16,7 +16,7 @@ BookList
       <th>Author</th>
       <th>Title</th>
       <th>Year</th>
-      <th>Publisher</th>
+      <th>Action</th>
     </tr>
   </thead>
   <tbody>
@@ -25,12 +25,16 @@ BookList
       <td>{{ book.author }}</td>
       <td>{{ book.title }}</td>
       <td>{{ book.publicationYear }}</td>
-      <td>{{ book.publisher }}</td>
+      <td>
+        <a href="{% url 'book_edit' pk=book.pk %}">
+          <span class="glyphicon glyphicon-pencil"></span>
+        </a>
+      </td>
     </tr>
   {% endfor %}
   </tbody>
 </table>
-<a href="#">
+<a href="{% url 'book_new' %}">
 <button type="submit" class="btn btn-primary">
     Register
 </button>
